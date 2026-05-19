@@ -1,0 +1,60 @@
+# Virtual environments
+test/
+**/imbedding/
+**/venv_StarGAN/
+**/mymodel/
+**/venv/
+**/.venv/
+**/env/
+**/.env/
+pyvenv.cfg
+**/pyvenv.cfg
+
+# Backed up git repositories directories
+**/.git_backup/
+
+# Pycache and python compiled files
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Editors and OS temporary files
+*.swp
+*~
+.DS_Store
+Thumbs.db
+*.log
+
+# Large weights and model checkpoints (globally ignored)
+*.pth
+*.ckpt
+*.pt
+*.onnx
+*.pb
+*.dat
+*.pkl
+*.bin
+*.hash
+*.tar
+*.zip
+*.gz
+*.tgz
+*.rar
+*.7z
+
+# Heavy library directories or downloaded weights
+**/checkpoints/
+**/pretrained_models/
+**/models/
+**/arcface_model/
+**/.assets/models/
+**/custom_nodes/ComfyUI-Manager/model/
+**/ComfyUI/models/
+**/FaceParser.pth
+**/GazeEstimator.pt

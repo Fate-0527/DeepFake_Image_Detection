@@ -17,7 +17,7 @@
 | **`domain_composition`** | [domain_composition_fake_detection](https://github.com/Fate-0527/domain_composition_fake_detection.git) | 학습 데이터의 도메인 구성이 미지의 가짜 이미지 탐지기 일반화에 미치는 영향 분석 (DINOv3/OpenCLIP 백본 활용) |
 | **`DeepFake_Dataset`** | [DeepFake__Dataset](https://github.com/Fate-0527/DeepFake__Dataset.git) | COCO 캡션 기반 다중 생성기 합성 이미지 파이프라인(Make Image) 및 실제 고화질 데이터셋 자동 다운로드 스크립트 |
 | **`vit_layer_cnn_deepfake`** | [dinov2_layer_cnn_deepfake](https://github.com/Fate-0527/dinov2_layer_cnn_deepfake) | DINOv2 ViT 레이어 특징 추출 및 XAI(설명 가능한 AI) 기반 배경/전경 편향 분석 및 검증 연구 |
-| **`DeepFake_Generation_Prevention`** | *(로컬 전용 - Local Only)* | 페이스 스왑 생성기(DiffSwap, SimSwap, facefusion, InstantID) 및 생성 제어/예방 메커니즘 도구 모음 |
+| **`DeepFake_Prevention`** | [Deepfake_prevention](https://github.com/Fate-0527/Deepfake_prevention.git) | 페이스 스왑 생성기(DiffSwap, SimSwap, facefusion, InstantID) 및 생성 제어/예방 메커니즘 도구 모음 |
 
 ---
 
@@ -58,8 +58,8 @@
   * DINOv2 ViT-L/14 레이어 특징을 기반으로 학습된 경량 CNN 분류기의 의사결정 원인을 설명 가능한 AI(XAI) 및 CAM 기법으로 분석.
   * **주요 발견:** 모델이 객체(Object) 자체보다 원경 배경(Far-Background) 및 글로벌 컨텍스트(Global Context)에 크게 의존하여 판별하는 편향(Bias)이 존재함을 발견하고, 배경 스왑(Background Swap) 실험을 통해 인과적으로 증명.
 
-### 6. DeepFake Generation & Prevention (`DeepFake_Generation_Prevention`)
-* **로컬 전용 (Local Only)**
+### 6. DeepFake Generation & Prevention (`DeepFake_Prevention`)
+* **GitHub Repository:** [Deepfake_prevention](https://github.com/Fate-0527/Deepfake_prevention.git)
 * **주요 구성 요소:**
   * `Prevention/`: ComfyUI, DiffFace, DiffSwap, facefusion, InstantID, SimSwap 등 오픈소스 기반 페이스 스왑 모델 구축 및 이들을 무력화하거나 예방하기 위한 연구 자료 모음.
   * `GAN/`: StarGAN, HyperStyle 등 GAN 기반 조작 도구들 포함.
@@ -83,7 +83,7 @@ flowchart TD
 
     subgraph Analysis [3. XAI 분석 및 무력화]
         J[dinov2_layer_cnn_deepfake] -->|설명 가능한 AI| K[배경/컨텍스트 편향 원인 분석 및 Swap 실험]
-        L[DeepFake_Generation_Prevention] -->|방어 및 무력화| M[페이스스왑 분석 및 생성 억제 연구]
+        L[Deepfake_prevention] -->|방어 및 무력화| M[페이스스왑 분석 및 생성 억제 연구]
     end
 
     DataPrep --> FeatureExtract
@@ -92,6 +92,4 @@ flowchart TD
 
 ---
 
-> ⚠️ **주의사항 (Git Policy)**:
 > 1. 용량이 큰 원본 이미지 데이터셋, 모델 학습 체크포인트(`.pth`, `.pt`), 로컬 가상환경 및 API 비밀 키 등은 보안 및 저장소 최적화를 위해 `.gitignore`에 등록되어 있으며, 모든 Public 저장소 업로드 시 자동으로 제외됩니다.
-> 2. `DeepFake_Generation_Prevention` 폴더는 페이스 스왑 라이브러리의 용량 및 라이선스 등으로 인해 로컬 전용으로 구성되어 있습니다.

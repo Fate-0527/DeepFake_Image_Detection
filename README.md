@@ -17,7 +17,7 @@ The mapping between the local directory layout and the public GitHub repositorie
 | **`domain_composition`** | [domain_composition_fake_detection](https://github.com/Fate-0527/domain_composition_fake_detection.git) | Analysis of how training data domain composition affects detector generalization on unseen fake image generators (utilizing DINOv3 and OpenCLIP backbones). |
 | **`DeepFake_Dataset`** | [DeepFake__Dataset](https://github.com/Fate-0527/DeepFake__Dataset.git) | COCO caption-based synthetic image generation pipelines (Make Image) and automatic download utilities for high-resolution real datasets. |
 | **`vit_layer_cnn_deepfake`** | [dinov2_layer_cnn_deepfake](https://github.com/Fate-0527/dinov2_layer_cnn_deepfake) | DINOv2 ViT layer feature extraction and Explainable AI (XAI) verification analyzing background/foreground bias in deepfake detectors. |
-| **`DeepFake_Generation_Prevention`** | *(Local Only)* | A collection of face-swap generation frameworks (DiffSwap, SimSwap, facefusion, InstantID) and generation prevention/control mechanisms. |
+| **`DeepFake_Prevention`** | [Deepfake_prevention](https://github.com/Fate-0527/Deepfake_prevention.git) | A collection of face-swap generation frameworks (DiffSwap, SimSwap, facefusion, InstantID) and generation prevention/control mechanisms. |
 
 ---
 
@@ -58,8 +58,8 @@ The mapping between the local directory layout and the public GitHub repositorie
   * Explainable AI (XAI) and CAM analysis on lightweight CNN classifiers trained on DINOv2 ViT-L/14 layers to investigate detector decision-making cues.
   * **Key Finding:** Uncovered that the detectors rely heavily on far-background and global-context cues rather than object-intrinsic fake artifacts. This background bias was causally proven using background-swap experiments.
 
-### 6. DeepFake Generation & Prevention (`DeepFake_Generation_Prevention`)
-* **Local Only**
+### 6. DeepFake Generation & Prevention (`DeepFake_Prevention`)
+* **GitHub Repository:** [Deepfake_prevention](https://github.com/Fate-0527/Deepfake_prevention.git)
 * **Key Components:**
   * `Prevention/`: Implementations of open-source face-swap pipelines (ComfyUI, DiffFace, DiffSwap, facefusion, InstantID, SimSwap) and mitigation/prevention research.
   * `GAN/`: Multi-domain translation frameworks (StarGAN) and GAN inversion tools (HyperStyle).
@@ -83,7 +83,7 @@ flowchart TD
 
     subgraph Analysis [3. XAI Analysis & Prevention]
         J[dinov2_layer_cnn_deepfake] -->|Explainable AI| K[Context Bias Analysis & Background Swap]
-        L[DeepFake_Generation_Prevention] -->|Mitigation & Prevention| M[Face-swap Analysis & Generation Control]
+        L[Deepfake_prevention] -->|Mitigation & Prevention| M[Face-swap Analysis & Generation Control]
     end
 
     DataPrep --> FeatureExtract
@@ -92,6 +92,4 @@ flowchart TD
 
 ---
 
-> ⚠️ **Caution (Git Policy)**:
 > 1. Large raw datasets, model checkpoints (`.pth`, `.pt`), local virtual environments, and API secret keys are git-ignored and automatically excluded from all public uploads.
-> 2. The `DeepFake_Generation_Prevention` folder is designated as local-only due to the substantial size and licensing of face-swap libraries.

@@ -12,7 +12,7 @@
 
 | 로컬 디렉터리 명 (Local Directory) | 연계 GitHub 저장소 (GitHub Repository) | 설명 (Description) |
 | :--- | :--- | :--- |
-| **`Reconstruction_Error`** | [lare_fire_deepfake_detection](https://github.com/Fate-0527/lare_fire_deepfake_detection.git) | LaRE/FIRE 기법, DIRE(재구성 오차), 커스텀 탐지 모델(Mymodel), 타임스텝 실험(T_Step) 등 메인 탐지 연구 공간 |
+| **`Reconstruction_Error`** | [Reconstruction_Error](https://github.com/Fate-0527/Reconstruction_Error.git) | LaRE/FIRE 기법, DIRE(재구성 오차), 커스텀 탐지 모델(Mymodel), 타임스텝 실험(T_Step) 등 메인 탐지 연구 공간 |
 | **`Master-Replica`** | [master_replica](https://github.com/Fate-0527/master_replica.git) | JPEG 압축에 강건한 탐지기 학습을 위한 Master(원본 PNG)-Replica(압축 JPEG) 공동 학습 프레임워크 |
 | **`domain_composition`** | [domain_composition_fake_detection](https://github.com/Fate-0527/domain_composition_fake_detection.git) | 학습 데이터의 도메인 구성이 미지의 가짜 이미지 탐지기 일반화에 미치는 영향 분석 (DINOv3/OpenCLIP 백본 활용) |
 | **`DeepFake_Dataset`** | [DeepFake__Dataset](https://github.com/Fate-0527/DeepFake__Dataset.git) | COCO 캡션 기반 다중 생성기 합성 이미지 파이프라인(Make Image) 및 실제 고화질 데이터셋 자동 다운로드 스크립트 |
@@ -24,7 +24,7 @@
 ## 🔍 프로젝트별 세부 소개 (Project Details)
 
 ### 1. LaRE + FIRE Deepfake Detection (`Reconstruction_Error`)
-* **GitHub Repository:** [lare_fire_deepfake_detection](https://github.com/Fate-0527/lare_fire_deepfake_detection.git)
+* **GitHub Repository:** [Reconstruction_Error](https://github.com/Fate-0527/Reconstruction_Error.git)
 * **주요 구성 요소:**
   * `Mymodel/`: 커스텀 탐지 모델 설계 및 주파수 분석(Radial Profile, GLCM, Local Variance 등) 실험 코드.
   * `DIRE/` (Diffusion Reconstruction Error): 디퓨전 모델의 재구성 오차 기반 생성 이미지 탐지 코드.
@@ -76,7 +76,7 @@ flowchart TD
     end
 
     subgraph FeatureExtract [2. 특징 분석 및 도메인 일반화]
-        D[lare_fire_deepfake_detection] -->|재구성 오차 기반 탐지| E[DIRE / LaRE / FIRE]
+        D[Reconstruction_Error] -->|재구성 오차 기반 탐지| E[DIRE / LaRE / FIRE]
         F[domain_composition_fake_detection] -->|도메인 영향 평가| G[DINOv3 / OpenCLIP 레이어 임베딩]
         H[master_replica] -->|JPEG 강건성 강화| I[Master-Replica 공동 학습]
     end

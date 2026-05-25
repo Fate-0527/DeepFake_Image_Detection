@@ -12,7 +12,7 @@ The mapping between the local directory layout and the public GitHub repositorie
 
 | Local Directory | GitHub Repository | Description |
 | :--- | :--- | :--- |
-| **`Reconstruction_Error`** | [lare_fire_deepfake_detection](https://github.com/Fate-0527/lare_fire_deepfake_detection.git) | Main detection research space containing LaRE/FIRE methods, DIRE (Diffusion Reconstruction Error), custom detection model (Mymodel), and timestep experiments. |
+| **`Reconstruction_Error`** | [Reconstruction_Error](https://github.com/Fate-0527/Reconstruction_Error.git) | Main detection research space containing LaRE/FIRE methods, DIRE (Diffusion Reconstruction Error), custom detection model (Mymodel), and timestep experiments. |
 | **`Master-Replica`** | [master_replica](https://github.com/Fate-0527/master_replica.git) | A co-training framework using Master (lossless PNG) and Replica (compressed JPEG) images to train detectors robust against JPEG compression artifacts. |
 | **`domain_composition`** | [domain_composition_fake_detection](https://github.com/Fate-0527/domain_composition_fake_detection.git) | Analysis of how training data domain composition affects detector generalization on unseen fake image generators (utilizing DINOv3 and OpenCLIP backbones). |
 | **`DeepFake_Dataset`** | [DeepFake__Dataset](https://github.com/Fate-0527/DeepFake__Dataset.git) | COCO caption-based synthetic image generation pipelines (Make Image) and automatic download utilities for high-resolution real datasets. |
@@ -24,7 +24,7 @@ The mapping between the local directory layout and the public GitHub repositorie
 ## 🔍 Project Details
 
 ### 1. LaRE + FIRE Deepfake Detection (`Reconstruction_Error`)
-* **GitHub Repository:** [lare_fire_deepfake_detection](https://github.com/Fate-0527/lare_fire_deepfake_detection.git)
+* **GitHub Repository:** [Reconstruction_Error](https://github.com/Fate-0527/Reconstruction_Error.git)
 * **Key Components:**
   * `Mymodel/`: Custom detection model architecture and frequency analysis experiments (Radial Profile, GLCM, Local Variance, etc.).
   * `DIRE/` (Diffusion Reconstruction Error): Detection code based on diffusion reconstruction error map.
@@ -76,7 +76,7 @@ flowchart TD
     end
 
     subgraph FeatureExtract [2. Feature Extraction & Generalization]
-        D[lare_fire_deepfake_detection] -->|Reconstruction Error Detection| E[DIRE / LaRE / FIRE]
+        D[Reconstruction_Error] -->|Reconstruction Error Detection| E[DIRE / LaRE / FIRE]
         F[domain_composition_fake_detection] -->|Domain Composition Impact| G[DINOv3 / OpenCLIP Layer Embeddings]
         H[master_replica] -->|JPEG Robustness| I[Master-Replica Co-training]
     end
